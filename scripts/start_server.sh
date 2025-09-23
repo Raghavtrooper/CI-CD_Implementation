@@ -1,2 +1,4 @@
+# start_server.sh
+
 #!/bin/bash
-pip3 install -r /home/ec2-user/requirements.txt
+systemctl start flaskapp
