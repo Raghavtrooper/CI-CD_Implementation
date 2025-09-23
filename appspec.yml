@@ -9,19 +9,19 @@ hooks:
   ApplicationStop:
     - location: scripts/stop_server.sh
       timeout: 300
-      runas: ec2-user
+      runas: root        # Changed from ec2-user
 
   AfterInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
-      runas: ec2-user
+      runas: ec2-user    # Stays as ec2-user (Best Practice)
 
   ApplicationStart:
     - location: scripts/start_server.sh
       timeout: 300
-      runas: ec2-user
+      runas: root        # Changed from ec2-user
 
   ValidateService:
     - location: scripts/validate.sh
       timeout: 120
-      runas: ec2-user
+      runas: ec2-user    # Stays as ec2-user
